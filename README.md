@@ -22,4 +22,4 @@ with a unique username and password to personalize their experience and save the
   Provides access to a wide range of news articles and headlines.
 
 ## Contributors
-The News App is currently maintained by [Ronan]([https://github.com/your](https://github.com/Ronan-Francis/RonansNews)
+The News App is currently maintained by [Ronan Francis](https://github.com/your](https://github.com/Ronan-Francis/RonansNews) 
