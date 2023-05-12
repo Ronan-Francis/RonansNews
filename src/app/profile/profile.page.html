@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary" color="medium"> 
+      <ion-button [routerLink]="['/home']">
+        <ion-icon name="home-sharp" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/search']">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary" color="medium">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-card>
+  <ion-card-header>
+    <ion-button  fill="clear" expand="block"  id="Change Profile">
+      <ion-icon slot="icon-only" name="{{this.profileImg}}"></ion-icon>
+    </ion-button>
+    
+  </ion-card-header>
+  <ion-title><b>Hello, </b>{{this.username}}</ion-title>
+  <ion-button  fill="fill" expand="block" color="danger">
+    Log out
+  </ion-button>
+</ion-card>
+<div>
+  <ion-card-title><b>Liked Stories</b></ion-card-title>
+  <ion-card *ngFor="let s of likes">
+    <ion-card-header>
+      <ion-card-title><a href="{{s.url}}">{{s.title}}</a></ion-card-title>
+      <ion-card-subtitle>{{s.description}}</ion-card-subtitle>
+      <span><b><i>~{{s.author}}</i></b></span>
+    </ion-card-header>
+    <ion-button fill="clear" color="danger" (click)="save(s)">
+      <ion-icon *ngIf="!isLiked(s)" slot="icon-only" name="heart-outline"></ion-icon>
+      <ion-icon *ngIf="isLiked(s)" slot="icon-only" name="heart"></ion-icon>
+    </ion-button>
+  </ion-card>
+</div>
+</ion-content>
+
+<ion-popover trigger="trigger-button">
+  <ng-template>
+    <ion-content class="ion-padding">Hello Styled World!</ion-content>
+  </ng-template>
+</ion-popover>
+

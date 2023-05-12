@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary" color="medium"> 
+      <ion-button [routerLink]="['/profile']">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/home']">
+        <ion-icon name="home-sharp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary" color="medium">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+
+<div>
+  <ion-card *ngFor="let s of results">
+    <ion-card-header>
+      <ion-card-title><a href="{{s.url}}">{{s.title}}</a></ion-card-title>
+      <ion-card-subtitle>{{s.description}}</ion-card-subtitle>
+      <span><b><i>~{{s.author}}</i></b></span>
+    </ion-card-header>
+
+  </ion-card>
+</div>
+</ion-content>
+
+<!--    <ion-button fill="clear" color="danger" (click)="save(s)">
+      <ion-icon *ngIf="!isLiked(s)" slot="icon-only" name="heart-outline"></ion-icon>
+      <ion-icon *ngIf="isLiked(s)" slot="icon-only" name="heart"></ion-icon>
+    </ion-button>-->
