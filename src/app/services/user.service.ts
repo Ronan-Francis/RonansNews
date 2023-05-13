@@ -35,7 +35,7 @@ export class UserService {
     this.loggedIn = await this.storage.get('loggedIn');
     }
 
-  async saveData(password: string, username: string, likes:any) {
+  async saveData(username: string, password: string, likes:any) {
     await this.storage.create();
     await this.storage.set('password', password)
     await this.storage.set('username', username)

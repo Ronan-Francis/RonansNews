@@ -26,7 +26,7 @@
     
   </ion-card-header>
   <ion-title><b>Hello, </b>{{this.username}}</ion-title>
-  <ion-button  fill="fill" expand="block" color="danger">
+  <ion-button expand="block" color="danger" (click) = "logOut()">
     Log out
   </ion-button>
 </ion-card>
@@ -46,9 +46,4 @@
 </div>
 </ion-content>
 
-<ion-popover trigger="trigger-button">
-  <ng-template>
-    <ion-content class="ion-padding">Hello Styled World!</ion-content>
-  </ng-template>
-</ion-popover>
 

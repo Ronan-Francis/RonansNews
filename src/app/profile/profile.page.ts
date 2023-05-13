@@ -46,4 +46,8 @@ async ngOnInit() {
 
 }
 
+logOut(){
+  this.storage.clear();
+}
+
 }
